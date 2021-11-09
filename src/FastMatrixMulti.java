@@ -47,9 +47,14 @@ public class FastMatrixMulti {
         }
 
         int[][][] M_S = matrix_chain_order(A);
-        print_optimal_parentheses(A, M_S[1], 1, A.length-2);
+        print_optimal_parentheses(A, M_S[1], 1, A.length-2);//txtbook says 'n' which is A.length-1.
+        // this is a 0 based indexing issue in this codes implementation and needs to be one less than n.
+        // not doing so creates an Array Bounds exception.
 
         //next step, comment out line 50, print S[][] and see what the heck is going on inside it.
+
+        // index 5k out of bounds for 3 lol.
+        //print_optimal_parentheses(A, M_S[0], 1, A.length-2);
 
     }
 
